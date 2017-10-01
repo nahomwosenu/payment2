@@ -1,0 +1,615 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<head>
+<title>Commercial Bank of Ethiopia | Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="keywords" content="Corporate Bank a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<!-- .css files -->
+	<link href="css/bars.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/font-awesome.css" />
+<!-- //.css files -->
+<!-- Default-JavaScript-File -->
+	
+	<script type='text/javascript' src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- //Default-JavaScript-File -->
+<!-- fonts -->
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Ropa+Sans:400,400i&amp;subset=latin-ext" rel="stylesheet">
+<!-- //fonts -->
+<!-- scrolling script -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+		$("#addaccount").on("click", function(){
+			var name=$("#name").val();
+			var email=$("#email").val();
+			var phone=$("#phone").val();
+			var location=$("#location").val();
+			
+			if(checkEmail(email)==false){
+				window.alert('email not valid');
+				return false;
+			}
+			if(isFullName(name)==false){
+				window.alert('Please Enter your full name');
+				return false;
+			}
+			if(!isValid(phone)){
+				window.alert('Please enter a valid phone number');
+				return;
+			}
+			if(!isValid(location)){
+				window.alert('Please enter a valid location');
+				return;
+			}
+			result=jQuery.get("connector.php",{"name":name,"email":email,"basic_info":true,"phone":phone,"address":location},function(data){
+				window.alert("Data: "+data);	
+			});
+			
+		});
+		function checkEmail(email){
+		    if(email!='' && email.toString().indexOf('@')>=0)
+				return true;
+			else return false;
+		}
+		function isValid(data){
+			data=data.trim();
+			if(data!='')
+				return true;
+			else return false;
+		}
+		function isFullName(name){
+			name=jQuery.trim(name);
+			if(name!='' && name.toString().indexOf(' ')>=0)
+				return true;
+			else return false;
+		}
+	});
+</script>
+<!-- //scrolling script -->
+</head>
+<!-- //Head -->
+<!-- Body -->
+<body>
+	<div class="top-main">
+		<div class="number">
+			<h3><i class="fa fa-phone" aria-hidden="true"></i> +251 96 529 0133</h3>
+			<div class="clearfix"></div>
+		</div>
+		<div class="social-icons">
+		<ul class="top-icons">
+			<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+			<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+			<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+			<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+			<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+		</ul>
+		<div class="form-top">
+		  <form action="#" method="post" class="navbar-form navbar-left">
+			<div class="form-group">
+				<input type="search" class="form-control" placeholder="Search">
+			</div>
+				<button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
+				<!-- <button type="submit" class="btn btn-default">Submit</button> -->
+			</form>
+		</div>
+			<div class="clearfix"></div>
+		</div>
+			<div class="clearfix"></div>
+	</div>
+		<!-- Top-Bar -->
+		<div class="top-bar">
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse" id="myNavbar">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#index.html" class="scroll">home</a></li>
+							<li><a href="#about" class="scroll">about</a></li>
+							<li><a href="#services" class="scroll">services</a></li>
+							<li><a href="#skills" class="scroll">skills</a></li>
+							<li><a href="#team" class="scroll">team</a></li>
+							<li><a href="#payment" class="scroll">payment</a></li>
+							<li><a href="#blog" class="scroll">blog</a></li>
+							<li><a href="#contact" class="scroll">contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<div class="logo">
+			<a href="index.html"><!--<i class="fa fa-inr" aria-hidden="true"></i>-->Commercial <span>Bank</span> of Ethiopia</a>
+		</div>
+		<!-- //Top-Bar -->
+		<div class="banner-main jarallax">
+			<div class="container">
+				<div class="banner-inner">
+					<div class="col-md-5 banner-left">
+						<form action="#" method="post">
+						<h3>Start savings account</h3>
+							<input type="text" id="name" placeholder="Full name" required=""/>
+							<input type="email" id="email" placeholder="Your mail" required=""/>
+							<input type="tel" id="phone" placeholder="Phone number" required=""/>
+							<input type="text" id="location" placeholder="Location" required=""/>
+							<div class="submit">
+								<button type="button" id="addaccount" class="btn btn-lg">GET STARTED</button>
+							</div>
+						</form>
+					</div>
+					<div class="col-md-7 banner-right">
+						<h1>Account Processing Steps !</h1>
+						<h4>Here are some details about what you can do on this site.</h4>
+							<div class="banner-right-text">
+								<div class="main-icon">
+									<i class="fa fa-share" aria-hidden="true"></i>
+								</div>
+								<p>First Register using your email address and your full-name.</p>
+							<div class="clearfix"></div>
+							</div>
+							<div class="banner-right-text">
+								<div class="main-icon">
+									<i class="fa fa-share" aria-hidden="true"></i>
+								</div>
+								<p>If you have applied for savings account then pay a deposite.</p>
+							<div class="clearfix"></div>
+							</div>
+							<div class="banner-right-text">
+								<div class="main-icon">
+									<i class="fa fa-share" aria-hidden="true"></i>
+								</div>
+								<p>If you have paid your intial Deposite then you can use one of our payment systems</p>
+							<div class="clearfix"></div>
+							</div>
+							<div class="banner-right-text">
+								<div class="main-icon">
+									<i class="fa fa-share" aria-hidden="true"></i>
+								</div>
+								<p>You can deposite additional balance at any time.</p>
+							<div class="clearfix"></div>
+							</div>
+							<div class="banner-right-text">
+								<div class="main-icon">
+									<i class="fa fa-share" aria-hidden="true"></i>
+								</div>
+								<p>You can also transfer and withdraw your balance or you can also close your savings account.</p>	
+							<div class="clearfix"></div>
+							</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+<!-- about -->
+<section class="about" id="about">
+	<div class="container">
+	<div class="about-heading">
+		<h2>About</h2>
+	</div>
+		<div class="about-grids">
+		<div class="col-md-6 about-left">
+			<img src="images/logo.png" alt="" />
+		</div>
+		<div class="col-md-6 about-right">
+			<h3>Commercial Bank of Ethiopia (CBE) overview from early days to today.</h3>
+			<p>CBE was legally established as a share company in 1963. In 1974, CBE merged with the privately owned Addis Ababa Bank. Since then, it has been playing significant roles in the development of the country. Pioneer to introduce modern banking to the country. The leading African bank with assets of 384.6 billion birr as on June 30th 2016. </p>
+			<p>CBE plays a catalytic role in the economic progress and development of the country. The first bank in Ethiopia to introduce ATM service for local users. Currently CBE has more than 13.3 million account holders and the number of Mobile and Internet Banking users also reached more than 1,342,000 as of September 30th 2016. Active ATM card holders reached more than 3 million.</p>
+			<div class="more">
+				<a href="#" data-toggle="modal" data-target="#myModal">Read More</a>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		</div>
+		</div>
+</section>
+<!-- //about -->
+
+<!-- services -->
+<section class="services" id="services">
+	<div class="container">
+		<div class="services-heading">
+			<h3>services</h3>
+		</div>
+		<div class="service-grids">
+			<div class="service-grid-top">
+				<div class="col-md-4 service-grid-1">
+					<div class="service-grid-text">
+						<div class="icon">
+							<i class="fa fa-usd" aria-hidden="true"></i>
+						</div>
+						<h4>Saving Service</h4>
+						<p>We provide trusted saving service with money back gurantee.</p>
+					</div>
+				</div>
+				<div class="col-md-4 service-grid-1">
+					<div class="service-grid-text">
+						<div class="icon">
+							<i class="fa fa-money" aria-hidden="true"></i>
+						</div>
+						<h4>Currency Conversion</h4>
+						<p>You can convert your current currency to other currencies like USD, EUR, YEN, BIRR ....</p>
+					</div>
+				</div>
+				<div class="col-md-4 service-grid-1">
+					<div class="service-grid-text">
+						<div class="icon">
+							<i class="fa fa-university" aria-hidden="true"></i>
+						</div>
+						<h4>Loan Service</h4>
+						<p>We provide loan service with minimum interests for those customers who are interested.</p>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="service-grid-bottom">
+				<div class="col-md-4 service-grid-1">
+					<div class="service-grid-text">
+						<div class="icon">
+							<i class="fa fa-handshake-o" aria-hidden="true"></i></div>
+						<h4>Money Transfer</h4>
+						<p>We work with major money transfer services like Western-Union, Dahabshil, Transfast and others.</p>
+					</div>
+				</div>
+				<div class="col-md-4 service-grid-1">
+					<div class="service-grid-text">
+						<div class="icon">
+							<i class="fa fa-briefcase" aria-hidden="true"></i>
+						</div>
+						<h4>Safe Withdrawal &amp; Deposite</h4>
+						<p>We provide a clear and safe withdrawal and Deposite services</p>
+					</div>
+				</div>
+				<div class="col-md-4 service-grid-1">
+					<div class="service-grid-text">
+						<div class="icon">
+							<i class="fa fa-credit-card" aria-hidden="true"></i>
+						</div>
+						<h4>ATM Service</h4>
+						<p>We have planted our ATMs almost everywhere, so you can withdraw money whereever you want to.</p>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //services -->
+
+<!-- clients -->
+<section class="skills" id="skills">
+	<div class="container">
+		<div class="skills-heading">
+			<h3>Our growth</h3>
+		</div>
+		<div class="col-md-2 career-growth">
+			<h4>2017 :</h4>
+			<h4>2015 :</h4>
+			<h4>2011 :</h4>
+			<h4>2006 :</h4>
+			<h4>2001 :</h4>
+		</div>
+		<section class='col-md-10 bar'>
+			  <div class='bar_group'>
+				<div class='bar_group__bar thin' value='675'></div>
+				<div class='bar_group__bar thin' value='500'></div>
+				<div class='bar_group__bar thin' value='420'></div>
+				<div class='bar_group__bar thin' value='343'></div>
+				<div class='bar_group__bar thin' value='245'></div>
+			  </div>
+			<div class='clearfix'></div>
+		</section>
+			<div class='clearfix'></div>
+	</div>
+</section>
+<!-- //clients -->
+
+<!--team-->
+<div class="team" id="team">
+	<div class="container">
+		<h4 class="title-w3">Team</h4>
+		<div class="team-grids">
+		<div class="col-md-3 team-gds wow fadeInLeft animated" data-wow-delay=".5s">
+			<div class="gal-grid-rev vertical">
+				<div class="img-box-content"><img src="images/t1.jpg" alt=" " /></div>
+					<div class="gal-text-box">
+						<div class="info-gal-con">
+							<div class="social-content">
+								<ul>
+									<li class="facebook"><a class=" hvr-underline-from-center" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li class="twitter"><a class="ico2 hvr-underline-from-center" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<li class="pinterest"><a class="ico3 hvr-underline-from-center" href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+									<li class="linkedin"><a class="ico4 hvr-underline-from-center" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+								</ul>			
+							</div>
+						</div>
+					</div>
+			</div>
+			<h4>ATO Bereket SIMON</h4>
+			<p>Board Chairman</p>
+		</div>
+		<div class="col-md-3 team-gds wow fadeInUp animated" data-wow-delay=".5s">
+			<div class="gal-grid-rev vertical">
+				<div class="img-box-content"><img src="images/t2.jpg" alt=" " /></div>
+					<div class="gal-text-box">
+						<div class="info-gal-con">
+							<div class="social-content">
+								<ul>
+									<li class="facebook"><a class="ico1 hvr-underline-from-center" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li class="twitter"><a class="ico2 hvr-underline-from-center" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<li class="pinterest"><a class="ico3 hvr-underline-from-center" href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+									<li class="linkedin"><a class="ico4 hvr-underline-from-center" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+								</ul>			
+							</div>
+						</div>
+					</div>
+			</div>
+			<h4>DR Mesfin belachew</h4>
+			<p>Board Member</p>
+		</div>
+		<div class="col-md-3 team-gds wow fadeInDown animated three" data-wow-delay=".5s">
+			<div class="gal-grid-rev vertical">
+				<div class="img-box-content"><img src="images/t3.jpg" alt=" " /></div>
+					<div class="gal-text-box">
+						<div class="info-gal-con">
+							<div class="social-content">
+								<ul>
+									<li class="facebook"><a class="ico1 hvr-underline-from-center" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li class="twitter"><a class="ico2 hvr-underline-from-center" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<li class="pinterest"><a class="ico3 hvr-underline-from-center" href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+									<li class="linkedin"><a class="ico4 hvr-underline-from-center" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+								</ul>			
+							</div>
+						</div>
+					</div>
+			</div>
+			<h4>ato nebiyu samuel</h4>
+			<p>Board member</p>
+		</div>
+		<div class="col-md-3 team-gds wow fadeInRight animated four" data-wow-delay=".5s">
+			<div class="gal-grid-rev vertical">
+				<div class="img-box-content"><img src="images/t4.jpg" alt=" " /></div>
+					<div class="gal-text-box">
+						<div class="info-gal-con">
+							<div class="social-content">
+								<ul>
+									<li class="facebook"><a class="ico1 hvr-underline-from-center" href="https://facebook.com/nebiyusamuel"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li class="twitter"><a class="ico2 hvr-underline-from-center" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<li class="pinterest"><a class="ico3 hvr-underline-from-center" href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+									<li class="linkedin"><a class="ico4 hvr-underline-from-center" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+								</ul>			
+							</div>
+						</div>
+					</div>
+			</div>
+			<h4>Ato Alemayehu Hunde</h4>
+			<p>Board Secretary </p>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	</div>
+</div>
+<!--//team-->
+
+<!-- payment -->
+<section class="payment jarallax" id="payment">
+	<div class="container">
+		<div class="payments-heading">
+			<h3>Our Payments</h3>
+		</div>
+		<div class="payment-grids">
+		<div class="col-md-3 payment-grid">
+			<i class="fa fa-cc-visa" aria-hidden="true"></i>
+			<h5>visa card</h5>
+		</div>
+		<div class="col-md-3 payment-grid">
+			<i class="fa credit fa-credit-card-alt" aria-hidden="true"></i>
+			<h5>credit card</h5>
+		</div>
+		<div class="col-md-3 payment-grid">
+			<i class="fa fa-cc-mastercard" aria-hidden="true"></i>
+			<h5>master card</h5>
+		</div>
+		<div class="col-md-3 payment-grid">
+			<i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+			<h5>debit card</h5>
+		</div>
+		<div class="clearfix"></div>
+		</div>
+	</div>
+</section>
+<!-- //payment -->
+
+<!-- our blog -->
+<section class="blog" id="blog">
+	<div class="container">
+		<div class="blog-heading">
+			<h3>Our blog</h3>
+		</div>
+		<div class="blog-grids">
+		<div class="col-md-4 blog-grid">
+			<a href="#"><img src="images/b2.jpg" alt="" /></a>
+			<h5><i class="fa fa-calendar" aria-hidden="true"></i> 21/2/2017 | by <i class="fa fa-user" aria-hidden="true"></i> <a href="#"> Admin</a></h5>
+			<h4><a href="#" data-toggle="modal" data-target="#myModal">Increasing Performance</a></h4>
+			<p> We have improved a lot with respects to speed and performance. We have Dedicated Servers for mobile banking &amp; core Database.</p>
+		</div>
+		<div class="col-md-4 blog-grid">
+			<a href="#"><img src="images/b1.jpg" alt="" /></a>
+			<h5><i class="fa fa-calendar" aria-hidden="true"></i> 20/2/2017 | by <i class="fa fa-user" aria-hidden="true"></i> <a href="#"> Admin</a></h5>
+			<h4><a href="#" data-toggle="modal" data-target="#myModal">Growing Capital</a></h4>
+			<p>We are one of the biggest capitalized companys of Ethiopia.</p>
+		</div>
+		<div class="col-md-4 blog-grid">
+			<a href="#"><img src="images/b3.jpg" alt="" /></a>
+			<h5><i class="fa fa-calendar" aria-hidden="true"></i> 19/2/2017 | by <i class="fa fa-user" aria-hidden="true"></i> <a href="#"> Admin</a></h5>
+			<h4><a href="#" data-toggle="modal" data-target="#myModal">More Customers Than EvEr</a></h4>
+			<p>The number of our bank customers have been increasing each year. Now we have the highest number of customers than ever.</p>
+		</div>
+		<div class="clearfix"></div>
+		</div>
+	</div>
+</section>
+<!-- //our blog -->
+
+<!-- modal -->
+	<div class="modal about-modal fade" id="myModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header"> 
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="span1"aria-hidden="true">&times;</span></button>						
+						<h4 class="modal-title"> Commercial<span> Bank</span> of Ethiopia</h4>
+					</div> 
+					<div class="modal-body">
+					<div class="agileits-w3layouts-info">
+						<img src="images/business.jpg" alt="" />
+						<p><strong>Background:</strong>
+CBE was legally established as a share company in 1963. In 1974, CBE merged with the privately owned Addis Ababa Bank. Since then, it has been playing significant roles in the development of the country. Pioneer to introduce modern banking to the country. The leading African bank with assets of 384.6 billion birr as on June 30th 2016. CBE plays a catalytic role in the economic progress and development of the country. The first bank in Ethiopia to introduce ATM service for local users. Currently CBE has more than 13.3 million account holders and the number of Mobile and Internet Banking users also reached more than 1,342,000 as of September 30th 2016. Active ATM card holders reached more than 3 million.</p>
+<p><strong>Objective:</strong> 
+The main objective of Commercial Bank of Ethiopia is to become a world-class commercial bank by the year 2025. 
+.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- //modal -->
+	
+<!-- contact -->
+<section class="contact" id="contact">
+	<div class="container">
+		<div class="contact-heading">
+			<h3>Contact us</h3>
+		</div>
+		<div class="contact-grids">
+			<div class=" col-md-6 contact-form">
+				<form action="#" method="post">
+						<input type="text" placeholder="Subject" required=""/>
+						<input type="text" placeholder="Your name" required=""/>
+						<input type="email" placeholder="Your mail" required=""/>
+						<textarea placeholder="Message" required></textarea>
+						<div class="submit1">
+							<input type="submit" value="submit">
+						</div>
+				</form>
+			</div>
+			<div class=" col-md-6 map">
+				<iframe src="images/logo.PNG" width='600'></iframe>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</section>
+<!-- //contact -->
+
+<!-- footer -->
+<section class="footer">
+	<div class="container">
+		<div class="footer-grids">
+			<div class="col-md-4 footer-grid1">
+				<div class="logo1">
+					<a href="index.html">Commercial <span>Bank</span> of Ethiopia</a>
+				</div>
+				<p> The first bank in Ethiopia to introduce ATM service for local users. </p>
+				<p> The main objective of Commercial Bank of Ethiopia is to become a world-class commercial bank by the year 2025. </p>
+			</div>
+			<div class="col-md-3 footer-grid2">
+				<h4>Locations</h4>
+				<p class="p1">Bherawi, Addis Abeba,</p>
+				<p>Ertria street, Ethiopia</p>
+				<p class="p1">Mexico,Addis Abebea</p>
+				<p>Debrewerq Tower,1st floor</p>
+				<p class="p1">Branch Offices,Other Cities,</p>
+				<p>and Addis Abeba,Ethiopia</p>
+			</div>
+			<div class="col-md-2 footer-grid3">
+				<h4>menu</h4>
+					<p><a href="#index.html" class="scroll">home</a></p>
+					<p><a href="#about" class="scroll">about</a></p>
+					<p><a href="#services" class="scroll">services</a></p>
+					<p><a href="#skills" class="scroll">skills</a></p>
+					<p><a href="#team" class="scroll">team</a></p>
+					<p><a href="#payment" class="scroll">payment</a></p>
+					<p><a href="#blog" class="scroll">blog</a></p>
+					<p><a href="#contact" class="scroll">contact</a></p>
+			</div>
+			<div class="col-md-3 footer-grid4">
+				<h4>our links</h4>
+				<p><a href="#">Funds transfer</a></p>
+				<p><a href="#">Mobile banking</a></p>
+				<p><a href="#">Deposits</a></p>
+				<p><a href="#">New joint accounts</a></p>
+				<p><a href="#">Internet online banking</a></p>
+				<p><a href="#">Balance enquiry</a></p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</section>
+<!-- //footer -->
+
+<!-- copyright -->
+<section class="copyright">
+	<div class="agileits_copyright text-center">
+			<p>© 2017 Commercial Bank of Ethiopia. All rights reserved | Design by <a href="//w3layouts.com/" class="w3_agile">Nahom Wosenu</a></p>
+	</div>
+</section>
+<!-- //copyright -->
+
+	<script src="js/jarallax.js"></script>
+	<script src="js/SmoothScroll.min.js"></script>
+	<script type="text/javascript">
+		/* init Jarallax */
+		$('.jarallax').jarallax({
+			speed: 0.5,
+			imgWidth: 1366,
+			imgHeight: 768
+		})
+	</script>
+
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 12,
+				easingType: 'linear' 
+				};
+			
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+	<!-- //here ends scrolling icon -->
+	<script src="js/bars.js"></script>
+</body>
+<!-- //Body -->
+</html>
+<!-- //html -->
